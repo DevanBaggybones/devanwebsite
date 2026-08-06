@@ -1,0 +1,146 @@
+<fanarts html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Arts – Devan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+  <div class="intro-border"></div>
+<div class="estrela">
+──────────────── ✦ ────────────────
+</div>
+  <!-- Cabeçalho da página -->
+  <section class="scene bg1 gallery-hero">
+    <div class="tarja tarja-reta">
+      <div class="conteudo">
+        <h2>──────────────── Fan Arts ────────────────</h2>
+        <p class="tagline">A collection of characters I love, drawn by me.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrossel -->
+  <section class="scene bg1 gallery-hero">
+    <div class="carousel">
+
+      <!-- Botão anterior -->
+      <button class="carousel-btn prev" onclick="moverCarrossel(-1)">&#8592;</button>
+
+      <!-- Área da imagem -->
+      <div class="carousel-display">
+        <img id="carousel-img" src="" alt="" onclick="abrirLightbox()">
+        <p id="carousel-caption" class="caption"></p>
+      </div>
+
+      <!-- Botão próximo -->
+      <button class="carousel-btn next" onclick="moverCarrossel(1)">&#8594;</button>
+
+    </div>
+
+    <!-- Indicadores (pontinhos) -->
+    <div class="carousel-dots" id="carousel-dots"></div>
+
+    <p class="gallery-hint">click the image to enlarge</p>
+  </section>
+
+  <!-- Lightbox (imagem ampliada) -->
+  <div class="lightbox" id="lightbox" onclick="fecharLightbox()">
+    <span class="lightbox-close" onclick="fecharLightbox()">✕</span>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+
+  <!-- Link de volta -->
+  <div class="tarja tarja-reta">
+    <div class="conteudo">
+      <h2><a href="index.html" class="conteudo-explore">← Back to Home</a></h2>
+<div class="estrela">
+──────────────── ✦ ────────────────
+</div>
+    </div>
+  </div>
+
+  <script>
+    // ─────────────────────────────────────────
+    // IMAGENS: adicione quantas quiser aqui
+    // Formato: { src: "nome-do-arquivo.png", caption: "Nome do Personagem" }
+    // ─────────────────────────────────────────
+    const imagens = [
+      { src: "Slipknot - Corey Illustration.png", caption: "Corey Taylor – Slipknot" },
+      { src: "Blasphemous Phone Wallpaper.png", caption: "Penitent One - Blasphemous" },
+      { src: "Blasphemous Wallpaper 2.png", caption: "Penitent One - Blasphemous" },
+      { src: "Jeepers Creepers Fan Art.png", caption: "Jeepers Creepers" },
+      { src: "Outlast Fanart.png", caption: "Miles Upshur & Waylon Park - Outlast" },
+      { src: "Ganondorf Drawings.png", caption: "Ganondorf - Hyrule Warriors" },
+      { src: "Karma The Dark World Daniel Fanart.png", caption: "Daniel McGovern - Karma The Dark World" },
+      { src: "The Evil Within - Psycho Break - Ruvik Fanart.png", caption: "Ruvik - The Evil Within" },
+      { src: "Jason Voorhees - In My Style.png", caption: "Jason Voorhees - Own Design" },
+    ];
+
+    let atual = 0;
+
+    const imgEl      = document.getElementById("carousel-img");
+    const captionEl  = document.getElementById("carousel-caption");
+    const dotsEl     = document.getElementById("carousel-dots");
+    const lbImg      = document.getElementById("lightbox-img");
+    const lbCaption  = document.getElementById("lightbox-caption");
+
+    // Cria os pontinhos indicadores
+    imagens.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.onclick = () => irPara(i);
+      dotsEl.appendChild(dot);
+    });
+
+    function atualizarCarrossel() {
+      const item = imagens[atual];
+      imgEl.src           = item.src;
+      imgEl.alt           = item.caption;
+      captionEl.textContent = item.caption;
+
+      // Atualiza os pontinhos
+      document.querySelectorAll(".dot").forEach((d, i) => {
+        d.classList.toggle("ativo", i === atual);
+      });
+    }
+
+    function moverCarrossel(direcao) {
+      atual = (atual + direcao + imagens.length) % imagens.length;
+      atualizarCarrossel();
+    }
+
+    function irPara(i) {
+      atual = i;
+      atualizarCarrossel();
+    }
+
+    function abrirLightbox() {
+      const item = imagens[atual];
+      lbImg.src             = item.src;
+      lbImg.alt             = item.caption;
+      lbCaption.textContent = item.caption;
+      document.getElementById("lightbox").classList.add("ativo");
+    }
+
+    function fecharLightbox() {
+      document.getElementById("lightbox").classList.remove("ativo");
+    }
+
+    // Navegar com as setas do teclado
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft")  moverCarrossel(-1);
+      if (e.key === "ArrowRight") moverCarrossel(1);
+      if (e.key === "Escape")     fecharLightbox();
+    });
+
+    // Inicializa
+    atualizarCarrossel();
+  </script>
+
+</body>
+</html>

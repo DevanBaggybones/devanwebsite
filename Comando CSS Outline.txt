@@ -1,0 +1,6 @@
+CSS - comandos 
+
+Outlines (Ajuda a visualizar os elementos que se sobrepõem):
+* { 
+outline: 1px solid red; 
+} 

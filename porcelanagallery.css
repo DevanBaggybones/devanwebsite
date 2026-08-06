@@ -1,0 +1,184 @@
+/* Container da imagem do Porcelana: precisa ser "relative" pro texto poder flutuar em cima */
+.porcelana-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-border {
+  background: transparent;
+}
+
+.bg-porcelana {
+  background-image: url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
+}
+
+/* Aplica o wallpaper como fundo de toda a página (não só das seções) */
+body {
+  background-image: url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Remove o fundo preto das caixas de texto, deixando o wallpaper aparecer */
+.tarja {
+  background: transparent;
+}
+.tarja h2 {
+  font-family: "Modern No.20";
+ font-size: 30px;
+}
+.titulo-espacado {
+  letter-spacing: 4px;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Imagem maior que a do fanarts.html (que usa 600px) */
+.porcelana-display img {
+  width: 750px;
+  max-width: 85vw;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.porcelana-display img:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* O nome do personagem, centralizado em cima da imagem */
+.porcelana-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Modern No.20";
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 25px rgba(0, 0, 0, 0.8);
+  letter-spacing: 3px;
+  text-align: center;
+  pointer-events: none; /* deixa o clique "passar" pra imagem, abrindo o lightbox */
+}
+
+/* Cabeçalho da galeria: menor que uma scene normal */
+.gallery-hero {
+  min-height: 30vh;
+}
+
+/* Container do carrossel: organiza botão, imagem e botão lado a lado */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Botões de navegação (setas) */
+.carousel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carousel-sub {
+  margin-top: 14px;
+  font-family: Georgia;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.carousel-btn:hover {
+  border-color: #e8c4c4;
+  color: #e8c4c4;
+}
+
+/* Pontinhos indicadores */
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.ativo {
+  background: white;
+}
+
+
+/* Dica de clique */
+.gallery-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1px;
+  margin-top: 4px;
+  margin-bottom: 100px;
+}
+
+/* ─── LIGHTBOX ──────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  cursor: zoom-out;
+}
+
+.lightbox.ativo {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Georgia;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #e8c4c4;
+}

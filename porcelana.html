@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P0RC3L4N4 M4DN3SS</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="porcelanagallery.css">
+</head>
+<body>
+
+  <div class="intro-border"></div>
+  <div class="estrela">
+──────────────── ✦ ────────────────
+  </div>
+
+  <!-- Cabeçalho da página -->
+<section class="scene bg-porcelana gallery-hero">
+    <div class="tarja tarja-reta">
+      <div class="conteudo">
+<h2>──────── <span class="titulo-espacado">P0RC3L4N4 M4DN3SS</span> ────────</h2>
+        <p class="tagline">P0RC3L4N4 M4DN3SS: a style that I created — my own mini universe. Everything I like, put into one aesthetic: porcelain, cyborgs, skulls, exposed bones. Works on any character — even ones that aren't mine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrossel -->
+<section class="scene bg-porcelana gallery-hero">
+    <div class="carousel">
+
+      <button class="carousel-btn prev" onclick="moverCarrossel(-1)">&#8592;</button>
+
+<div class="porcelana-display">
+  <img id="carousel-img" src="" alt="" onclick="abrirLightbox()">
+  <div id="carousel-name" class="porcelana-name"></div>
+  <p id="carousel-sub" class="carousel-sub"></p>
+</div>
+
+      <button class="carousel-btn next" onclick="moverCarrossel(1)">&#8594;</button>
+
+    </div>
+
+    <div class="carousel-dots" id="carousel-dots"></div>
+
+    <p class="gallery-hint">click the image to enlarge</p>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="fecharLightbox()">
+    <span class="lightbox-close" onclick="fecharLightbox()">✕</span>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+
+  <!-- Link de volta -->
+  <div class="tarja tarja-reta">
+    <div class="conteudo">
+      <h2><a href="index.html" class="conteudo-explore">← Back to Home</a></h2>
+      <div class="estrela">
+──────────────── ✦ ────────────────
+      </div>
+    </div>
+  </div>
+
+  <script>
+const imagens = [
+  { src: "P0RC3L4N4 M4DN3SS N3M3S1S BACKGROUND-2.png", caption: "N3M3S1S" },
+  { src: "P0RC3L4N4 M4DN3SS C4RN4G3 BACKGROUND-2.png", caption: "C4RN4G3" },
+  { src: "P0RC3L4N4 M4DN3SS PR3M0N1T10N BACKGROUND-2.png", caption: "PR3M0N1T10N" },
+  { src: "P0RC3L4N4 M4DN3SS SP1N3 BACKGROUND-2.png", caption: "SP1N3" },
+  { src: "P0RC3L4N4 M4DN3SS R3V0LT BACKGROUND-2.png", caption: "R3V0LT" },
+  { src: "P0RC3L4N4 M4DN3SS - J1NX.png", caption: "J1NX", sub: "Jinx from LOL/Arcane - on P0RC3L4N4 M4DN3SS style" },
+]
+
+    let atual = 0;
+
+    const imgEl     = document.getElementById("carousel-img");
+    const nameEl    = document.getElementById("carousel-name");
+    const dotsEl    = document.getElementById("carousel-dots");
+    const lbImg     = document.getElementById("lightbox-img");
+    const lbCaption = document.getElementById("lightbox-caption");
+
+    imagens.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.onclick = () => irPara(i);
+      dotsEl.appendChild(dot);
+    });
+
+function atualizarCarrossel() {
+  const item = imagens[atual];
+  imgEl.src          = item.src;
+  imgEl.alt          = item.caption;
+  nameEl.textContent = item.caption;
+
+  const subEl = document.getElementById("carousel-sub");
+  subEl.textContent = item.sub || "";
+  subEl.style.display = item.sub ? "block" : "none";
+
+  document.querySelectorAll(".dot").forEach((d, i) => {
+    d.classList.toggle("ativo", i === atual);
+  });
+}
+
+    function moverCarrossel(direcao) {
+      atual = (atual + direcao + imagens.length) % imagens.length;
+      atualizarCarrossel();
+    }
+
+    function irPara(i) {
+      atual = i;
+      atualizarCarrossel();
+    }
+
+    function abrirLightbox() {
+      const item = imagens[atual];
+      lbImg.src             = item.src;
+      lbImg.alt             = item.caption;
+      lbCaption.textContent = item.caption;
+      document.getElementById("lightbox").classList.add("ativo");
+    }
+
+    function fecharLightbox() {
+      document.getElementById("lightbox").classList.remove("ativo");
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft")  moverCarrossel(-1);
+      if (e.key === "ArrowRight") moverCarrossel(1);
+      if (e.key === "Escape")     fecharLightbox();
+    });
+
+    atualizarCarrossel();
+  </script>
+
+</body>
+</html>

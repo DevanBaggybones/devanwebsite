@@ -1,0 +1,166 @@
+.bg1{
+background-image:url("abstractredsky.jpg"); 
+}
+
+.tarja-reta {
+  transform: none;
+  margin-bottom:100px;
+}
+.tarja-reta .conteudo {
+  transform: none;
+}
+
+body > .tarja:last-of-type .conteudo {
+  transform: none;
+}
+
+/* Cabeçalho da galeria: menor que uma scene normal */
+.gallery-hero {
+  min-height: 30vh;
+}
+
+/* Seção do carrossel */
+.gallery-section {
+  min-height: 80vh;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 20px;
+  margin-top: 100px;
+  justify-content: flex-start;
+}
+
+/* Container do carrossel: imagem + dois botões lado a lado */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Área central com imagem e legenda */
+.carousel-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* A imagem em si */
+.carousel-display img {
+  width: 600px;
+  max-width: 80vw;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-display img:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Legenda abaixo da imagem */
+.carousel-display .caption {
+  margin-top: 14px;
+  font-family: Georgia;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+
+/* Botões de navegação (setas) */
+.carousel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  border-color: #e8c4c4;
+  color: #e8c4c4;
+}
+
+/* Pontinhos indicadores */
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.ativo {
+  background: white;
+}
+
+/* Dica de clique */
+.gallery-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1px;
+  margin-top: 4px;
+ margin-bottom: 100px;
+}
+
+/* ─── LIGHTBOX ──────────────────────── */
+
+/* Fundo escuro que cobre tudo */
+.lightbox {
+  display: none;               /* escondido por padrão */
+  position: fixed;
+  inset: 0;                    /* cobre 100% da tela */
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  cursor: zoom-out;
+}
+
+/* Quando a classe "ativo" é adicionada pelo JS, aparece */
+.lightbox.ativo {
+  display: flex;
+}
+
+/* Imagem ampliada */
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Legenda no lightbox */
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Georgia;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Botão de fechar (X) */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #e8c4c4;
+}
