@@ -198,8 +198,6 @@ body{
     white-space:nowrap;
   }
 
-@media (max-width:768px){
-
     .titulo-decorado{
         display:none;
     }
@@ -213,6 +211,8 @@ body{
         letter-spacing:3px;
     }
 
+.scene{
+    background-image:none !important;
 }
 
   .gallery-hero{
