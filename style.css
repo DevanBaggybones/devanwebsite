@@ -283,3 +283,93 @@ margin-bottom:100px;
 * {
   box-sizing: border-box;
 }
+
+@media (max-width:768px){
+
+.projetoA{
+    font-size:26px;
+}
+
+.welcome{
+    font-size:28px;
+}
+
+.conteudo-aboutme{
+    font-size:16px;
+}
+
+.caption{
+    font-size:16px;
+}
+.caption2{
+    font-size:24px;
+}
+.tagline{
+    font-size:18px;
+}
+
+.projetoB{
+    font-size:28px;
+}
+
+
+.tarja{
+    padding:40px 0;
+    margin-left:0;
+    margin-right:0;
+}
+
+.bg2-corey{
+    padding-bottom: 0;
+}
+
+.bg3-veylor{
+    margin-top: -1px;
+}
+.conteudo{
+
+width:90%;
+padding:20px;
+
+}
+
+.fanart-img{
+
+width:700px;
+max-width:100%;
+height:auto;
+
+}
+
+.pfp{
+
+max-width:80%;
+
+}
+
+.contato-email{
+
+font-size:20px;
+word-break:break-word;
+
+}
+
+.bg2,
+.bg3,
+.bg4,
+.bg5{
+
+margin-top:0;
+
+}
+
+.separador{
+    font-size:16px;
+
+}
+.scene{
+
+background-attachment:scroll;
+
+}
+}
