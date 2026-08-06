@@ -14,7 +14,15 @@
     background-image:none;
 }
 
-/* Aplica o wallpaper como fundo de toda a página (não só das seções) */
+.bg-fixo{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 body{
     background-image:url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
     background-size:cover;
