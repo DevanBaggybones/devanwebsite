@@ -10,16 +10,17 @@
   background: transparent;
 }
 
-.bg-porcelana {
-  background-image: url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
+.bg-porcelana{
+    background-image:none;
 }
 
 /* Aplica o wallpaper como fundo de toda a página (não só das seções) */
-body {
-  background-image: url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+body{
+    background-image:url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
 /* Remove o fundo preto das caixas de texto, deixando o wallpaper aparecer */
@@ -181,4 +182,89 @@ body {
 
 .lightbox-close:hover {
   color: #e8c4c4;
+}
+
+.titulo-porcelana{
+    text-align:center;
+}
+
+.titulo-decorado{
+    display:inline;
+}
+
+@media (max-width:768px){
+
+  .estrela{
+    font-size:14px;
+    white-space:nowrap;
+  }
+
+@media (max-width:768px){
+
+    .titulo-decorado{
+        display:none;
+    }
+
+    .titulo-porcelana{
+        text-align:center;
+    }
+
+    .titulo-porcelana .titulo-espacado{
+        font-size:28px; 
+        letter-spacing:3px;
+    }
+
+}
+
+  .gallery-hero{
+    min-height:auto;
+    padding:40px 0;
+  }
+
+  .carousel{
+    gap:10px;
+  }
+
+  .porcelana-display img{
+    width:100%;
+    max-width:85vw;
+  }
+
+  .carousel-btn{
+    width:40px;
+    height:40px;
+    font-size:22px;
+  }
+
+  .tarja h2{
+    font-size:18px;
+    white-space:nowrap;
+  }
+
+  .porcelana-name{
+    font-size:26px;
+    letter-spacing:2px;
+  }
+
+  .carousel-sub{
+    font-size:14px;
+    padding:0 12px;
+  }
+
+  .gallery-hint{
+    font-size:12px;
+    margin-bottom:40px;
+    text-align:center;
+  }
+
+  .lightbox-close{
+    right:15px;
+    top:15px;
+    font-size:24px;
+  }
+
+  body{
+    background-attachment:scroll;
+  }
+
 }
