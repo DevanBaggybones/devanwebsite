@@ -164,3 +164,60 @@ body > .tarja:last-of-type .conteudo {
 .lightbox-close:hover {
   color: #e8c4c4;
 }
+@media (max-width: 768px) {
+
+  /* Tarja */
+  .tarja-reta{
+    margin-bottom: 40px;
+  }
+
+  /* Cabeçalho */
+  .gallery-hero{
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  /* Carrossel */
+  .carousel{
+    gap: 10px;
+  }
+
+  .carousel-display img{
+    width: 100%;
+    max-width: 85vw;
+  }
+
+  /* Setas */
+  .carousel-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+.estrela{
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+  /* Legenda */
+  .carousel-display .caption{
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Dica */
+  .gallery-hint{
+    font-size: 12px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  /* Lightbox */
+  .lightbox-close{
+    right: 15px;
+    top: 15px;
+    font-size: 24px;
+  }
+
+}
