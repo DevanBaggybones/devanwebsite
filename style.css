@@ -284,12 +284,9 @@ margin-bottom:100px;
   box-sizing: border-box;
 }
 
+
 @media (max-width:768px){
 
-  .intro-border{
-    font-size:12px;
-}
-  
 .projetoA{
     font-size:26px;
 }
