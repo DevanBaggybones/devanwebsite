@@ -20,7 +20,6 @@ body{
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
 }
 
 /* Remove o fundo preto das caixas de texto, deixando o wallpaper aparecer */
