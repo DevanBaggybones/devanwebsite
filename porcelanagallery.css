@@ -6,28 +6,22 @@
   align-items: center;
 }
 
-.intro-border {
-  background: transparent;
+.intro-border{
+    background:transparent;
+}
+body{
+    background-image:url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
 }
 
 .bg-porcelana{
-    background-image:none;
-}
-
-.bg-fixo{
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height:100%
-    object-fit: cover;
-    z-index: -1;
-}
-
-body{
-    background-image:none;
+    background-image:url("P0RC3L4N4 M4DN3SS BACKGROUND.png");
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
 /* Remove o fundo preto das caixas de texto, deixando o wallpaper aparecer */
@@ -204,24 +198,29 @@ body{
   .estrela{
     font-size:14px;
     white-space:nowrap;
+    transform:scale(0.75);
+    transform-origin:center;
+    width:133%;
+    margin-left:-16.5%;
   }
 
     .titulo-decorado{
         display:none;
     }
 
-    .titulo-porcelana{
-        text-align:center;
-    }
-
-    .titulo-porcelana .titulo-espacado{
-        font-size:28px; 
-        letter-spacing:3px;
-    }
-
-.scene{
-    background-image:none !important;
+.titulo-porcelana{
+    text-align:center;
+    width:100%;
+    margin-left:0;
+    margin-right:0;
 }
+
+  .titulo-espacado{
+      display:inline-block;
+      font-size:24px;
+      letter-spacing:2px;
+      text-align:center;
+  }
 
   .gallery-hero{
     min-height:auto;
@@ -243,10 +242,12 @@ body{
     font-size:22px;
   }
 
-  .tarja h2{
+.tarja h2{
     font-size:18px;
-    white-space:nowrap;
-  }
+    white-space:normal;
+    width:100%;
+    text-align:center;
+}
 
   .porcelana-name{
     font-size:26px;
@@ -273,5 +274,18 @@ body{
   body{
     background-attachment:scroll;
   }
+
+.conteudo{
+    width:100%;
+    max-width:none;
+    padding:20px;
+    text-align:center;
+}
+
+.tarja{
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+}
 
 }
