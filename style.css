@@ -286,6 +286,10 @@ margin-bottom:100px;
 
 @media (max-width:768px){
 
+  .intro-border{
+    font-size:12px;
+}
+  
 .projetoA{
     font-size:26px;
 }
