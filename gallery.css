@@ -164,6 +164,7 @@ body > .tarja:last-of-type .conteudo {
 .lightbox-close:hover {
   color: #e8c4c4;
 }
+
 @media (max-width: 768px) {
 
   /* Tarja */
@@ -181,6 +182,15 @@ body > .tarja:last-of-type .conteudo {
   .carousel{
     gap: 10px;
   }
+
+.estrela{
+  font-size: 14px;
+  white-space: nowrap;
+  transform: scale(0.75);
+  transform-origin: center;
+  width: 133%;
+  margin-left: -16.5%;
+}
 
   .carousel-display img{
     width: 100%;
